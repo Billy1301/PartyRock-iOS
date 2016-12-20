@@ -19,7 +19,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let p1 = PartyRock(imageURL: "http://imgur.com/hHwdVhD.png", videoURL: urlTest, videoTitle: "Lights Out")
+        let p1 = PartyRock(imageURL: "https://assets.vg247.com/current//2016/05/kingsglaive_final_fantasy_15-7.jpg", videoURL: urlTest, videoTitle: "Lights Out")
         
           let p2 = PartyRock(imageURL: "http://i.imgur.com/q9hMDKp.png", videoURL: urlTest, videoTitle: "Let's Get Ridiculous")
         
@@ -61,6 +61,18 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return partyRocks.count
     }
 
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let partyROck = partyRocks[indexPath.row]
+        
+        performSegue(withIdentifier: "VideoVC", sender: partyROck)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? VideoVC {
+            if let party = sender as? PartyRock {
+                destination.partyRock = party
+            }
+        }
+    }
 }
 

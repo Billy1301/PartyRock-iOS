@@ -153,20 +153,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUb-FK-hWI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="237"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="237"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="237" id="QW5-yk-dZo"/>
                                 </constraints>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A24-g4-IKS">
+                                <rect key="frame" x="0.0" y="303" width="375" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="diB-k7-qiw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="A24-g4-IKS" firstAttribute="top" secondItem="YUb-FK-hWI" secondAttribute="bottom" constant="36" id="GQf-M2-9Zg"/>
                             <constraint firstAttribute="trailing" secondItem="YUb-FK-hWI" secondAttribute="trailing" id="HYy-b2-WaB"/>
-                            <constraint firstItem="YUb-FK-hWI" firstAttribute="top" secondItem="f7B-BZ-6Uf" secondAttribute="top" id="SnU-04-tgB"/>
+                            <constraint firstItem="A24-g4-IKS" firstAttribute="centerX" secondItem="f7B-BZ-6Uf" secondAttribute="centerX" id="Kmv-qO-Gcr"/>
+                            <constraint firstItem="YUb-FK-hWI" firstAttribute="top" secondItem="f7B-BZ-6Uf" secondAttribute="top" constant="30" id="SnU-04-tgB"/>
+                            <constraint firstItem="A24-g4-IKS" firstAttribute="leading" secondItem="f7B-BZ-6Uf" secondAttribute="leading" id="Zhl-7Z-u7g"/>
                             <constraint firstItem="YUb-FK-hWI" firstAttribute="leading" secondItem="f7B-BZ-6Uf" secondAttribute="leading" id="fzi-YL-exT"/>
+                            <constraint firstAttribute="trailing" secondItem="A24-g4-IKS" secondAttribute="trailing" id="sgh-G7-YfB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleView" destination="A24-g4-IKS" id="Jdr-69-0NC"/>
+                        <outlet property="webView" destination="YUb-FK-hWI" id="4Ii-jF-UgP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlA-0D-2W2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
