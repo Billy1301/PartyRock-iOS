@@ -23,7 +23,6 @@ class PartyCellTableViewCell: UITableViewCell {
         videoTitle.text = partyRock.videoTitle
         
         //need to use async task for downloading image or links from internet
-        
         let url = URL(string: partyRock.imageURL)!
         
         DispatchQueue.global().async {
